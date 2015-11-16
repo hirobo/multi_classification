@@ -1,5 +1,5 @@
 # Multi Classification for images with scikit-learn
-Multi classification script for product images
+Multi classification script for product images(example: five shoes categories)
 
 ## Requirements
 * opencv(>= 2.4.8)
@@ -21,7 +21,6 @@ Where examples.tar.gz (7.5MB) consists of 300 pictures pro each categories:
 ```sh
 $ tar -xvzf example_data/examples.tar.gz -C data/
 ```
-
 Please check the setting of CATEGORY_CLASS_DICT in config.py.
 
 
@@ -34,7 +33,7 @@ The pkl file will be saved here:
 pkl/data_label/data_label_HogSizeFeature.pkl
 ```
 
-### Prepare 2. Train data and tune parameters for the best classifier, then dump it as a pkl file (This may takes 30 Min.)
+### Prepare 2. Train data and tune parameters for the best classifier, then dump it as a pkl file
 ```sh
 $ python create_classifier.py pkl/data_label/data_label_HogSizeFeature.pkl HogSizeFeature
 ```
