@@ -1,0 +1,9 @@
+*.pyc
+/tmp
+/log
+
+/data
+/pkl/*
+!.gitkeep
+
+/result
