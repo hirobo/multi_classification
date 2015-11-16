@@ -79,7 +79,7 @@ For example, if you want to test all heels pictures in data/test_data/heels/ ,
 ```sh
 $ python test_classify.py data/test_data/heels/ pkl/estimator/svm_HogSizeFeature_rbf_1000_0.001.pkl 2 HogSizeFeature
 ```
-where 2 is the label for "dress". (See config.py)
+where 2 is the label for "heels". (See config.py)
 
 For example, if you want to just test one heels picture data/test_data/heels/heels_test_0.jpg ,
 ```sh
