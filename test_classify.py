@@ -11,34 +11,32 @@ SAVE_FAILURES = config.SAVE_FAILURES
 if __name__ == "__main__":
 
 	if len(sys.argv) < 4:
-		print "USAGE: python test_classify.py <src(a file path or folder)> <path/to/file.pkl> <label> <option: feature_type(HogFeature or HogSizeFeature)"
+		print "USAGE: python test_classify.py <src(a file path or folder)> <label>"
 		sys.exit(0)
 
 	feature_type = config.FEATURE_TYPE
 	feature = None
 
 	src = sys.argv[1]
-	classifier_file = sys.argv[2]
-	label = int(sys.argv[3])
+	label = int(sys.argv[2])
 
-
-	if len(sys.argv) >= 5:
-		feature_type = sys.argv[4]
-
-	if feature_type	== "HogFeature":
-		feature = HogFeature()
-	else:
-		feature = HogSizeFeature()
+	classifier_file = config.PKL_CLASSIFIER_FILE
+	params_file = config.PKL_PARAMS_FILE
 
 	# load data for estimator
 	try:
 		clf = joblib.load(classifier_file)
+		(mu, sigma) = joblib.load(params_file)
 		print clf
 	except Exception, e:			
 		raise e
 	else:
 		pass
 
+	if feature_type	== "HogFeature":
+		feature = HogFeature(mu, sigma)
+	else:
+		feature = HogSizeFeature(mu, sigma)
 
 	print "classify for label %d with %s"%(label, classifier_file)
 

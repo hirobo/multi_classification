@@ -4,11 +4,12 @@ import numpy as np
 from sklearn.cross_validation import train_test_split
 from sklearn.externals import joblib
 from sklearn.metrics import confusion_matrix
+import config
 
 if __name__ == "__main__":
 
-	pkl_data_label_file = sys.argv[1]
-	classifier_file = sys.argv[2]
+	pkl_data_label_file = config.PKL_DATA_LABEL_FILE
+	classifier_file = config.PKL_CLASSIFIER_FILE
 
 	try:
 		(data, labels) = joblib.load(pkl_data_label_file)
