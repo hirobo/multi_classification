@@ -24,13 +24,14 @@ $ tar -xvzf example_data/examples.tar.gz -C data/
 Please check the setting of CATEGORY_CLASS_DICT in config.py.
 
 
-### Prepare 1. dump feature data and labels as pkl file
+### Prepare 1. dump feature data and labels, params for normalization(mu and sigma) as pkl files
 ```sh
 $ python dump_data_labels.py
 ```
-The pkl file will be saved here: 
+Two pkl files will be saved here: 
 ```
 pkl/data_label_HogSizeFeature.pkl
+pkl/params_HogSizeFeature.pkl
 ```
 
 ### Prepare 2. Train data and tune parameters for the best classifier, then dump it as a pkl file
